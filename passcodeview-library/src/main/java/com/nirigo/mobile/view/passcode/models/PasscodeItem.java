@@ -1,0 +1,32 @@
+package com.nirigo.mobile.view.passcode.models;
+
+/**
+ * Created by Sicz-Mesziár János on 2015.06.14..
+ */
+public class PasscodeItem {
+
+    public final static int TYPE_NUMBER = 0,
+                            TYPE_DELETE = 1,
+                            TYPE_CLEAR  = 2;
+
+    private String value;
+    private int type;
+
+    public PasscodeItem(String value, int type) {
+        this.value = value;
+        this.type = type;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    @Override
+    public String toString() {
+        return value;
+    }
+}

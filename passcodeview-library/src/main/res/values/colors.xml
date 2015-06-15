@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="passcode_button_background">?android:attr/windowBackground</color>
+    <color name="passcode_button_border">#696969</color>
+    <color name="passcode_button_text">#696969</color>
+</resources>
