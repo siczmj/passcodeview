@@ -130,6 +130,11 @@ public class PasscodeIndicator extends LinearLayout {
         startAnimation(wrongAnimation);
     }
 
+    public void clear(){
+        if(wrongAnimation != null)
+            wrongAnimation.cancel();
+        setIndicatorLevel(0);
+    }
 
     // Setters -------------------------------------------------------------------------------------
     public void setIndicatorLevel(int level) {
@@ -139,11 +144,11 @@ public class PasscodeIndicator extends LinearLayout {
         initLevel();
     }
 
-    public void incrementLevel(){
+    public void incrementIndicatorLevel(){
         setIndicatorLevel(getIndicatorLevel()+1);
     }
 
-    public void decrementLevel(){
+    public void decrementIndicatorLevel(){
         setIndicatorLevel(getIndicatorLevel()-1);
     }
 

@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import com.nirigo.mobile.passcode.R;
 import com.nirigo.mobile.view.passcode.adapters.PasscodeBaseAdapter;
 import com.nirigo.mobile.view.passcode.models.PasscodeItem;
-import com.nirigo.mobile.view.passcode.models.PasscodeItemEmpty;
 
 import java.util.Arrays;
 
@@ -31,9 +30,9 @@ public class CustomPasscodeAdapter extends PasscodeBaseAdapter {
                 new PasscodeItem("7", PasscodeItem.TYPE_NUMBER),
                 new PasscodeItem("8", PasscodeItem.TYPE_NUMBER),
                 new PasscodeItem("9", PasscodeItem.TYPE_NUMBER),
-                new PasscodeItem("X", PasscodeItem.TYPE_DELETE),
+                new PasscodeItem("X", PasscodeItem.TYPE_CLEAR),
                 new PasscodeItem("0", PasscodeItem.TYPE_NUMBER),
-                new PasscodeItem("C", PasscodeItem.TYPE_CLEAR)
+                new PasscodeItem("<", PasscodeItem.TYPE_REMOVE)
         ));
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }

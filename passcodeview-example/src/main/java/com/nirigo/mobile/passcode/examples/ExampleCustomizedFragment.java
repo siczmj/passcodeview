@@ -11,6 +11,7 @@ import com.nirigo.mobile.passcode.other.BaseFragment;
 import com.nirigo.mobile.passcode.examples.adapters.CustomPasscodeAdapter;
 import com.nirigo.mobile.view.passcode.PasscodeIndicator;
 import com.nirigo.mobile.view.passcode.PasscodeView;
+import com.nirigo.mobile.view.passcode.models.PasscodeItem;
 
 /**
  * Created by Sicz-Mesziár János on 2015.06.16..
@@ -43,20 +44,40 @@ public class ExampleCustomizedFragment extends BaseFragment{
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        // Custom adapter to PasscodeView
         customPasscodeAdapter = new CustomPasscodeAdapter(getActivity());
-
         passcodeView.setAdapter(customPasscodeAdapter);
+
+        // Custom event handling
         passcodeView.setOnItemClickListener(new PasscodeView.OnItemClickListener() {
             public void onItemClick(PasscodeView view, int position, View item, Object o) {
 
+                // If 'wrong' animation ended:
                 if(!passcodeIndicator.isAnimationInProgress()) {
 
-                    yourCurrentPasscode.append(o.toString());
-                    passcodeIndicator.setIndicatorLevel(yourCurrentPasscode.length());
+                    PasscodeItem passcodeItem = view.getAdapter().getItem(position);
 
-                    if (yourCurrentPasscode.length() == passcodeIndicator.getIndicatorLength()) {
+                    if(passcodeItem.getType() == PasscodeItem.TYPE_CLEAR){  // Custom clear button
+
                         yourCurrentPasscode = new StringBuilder();
-                        passcodeIndicator.wrongPasscode();
+                        passcodeIndicator.clear();
+
+                    }else if(passcodeItem.getType() == PasscodeItem.TYPE_REMOVE){   // Custom delete button
+
+                        int len = yourCurrentPasscode.length();
+                        if(len > 0) yourCurrentPasscode.delete(len-1, len);
+                        passcodeIndicator.decrementIndicatorLevel();
+
+                    }else if(passcodeItem.getType() == PasscodeItem.TYPE_NUMBER) {  // Other number
+
+                        yourCurrentPasscode.append(o.toString());
+                        passcodeIndicator.setIndicatorLevel(yourCurrentPasscode.length());
+
+                        if (yourCurrentPasscode.length() == passcodeIndicator.getIndicatorLength()) {
+                            yourCurrentPasscode = new StringBuilder();
+                            passcodeIndicator.wrongPasscode();
+                        }
+
                     }
 
                 }

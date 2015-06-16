@@ -17,6 +17,7 @@
         passcode:indicator_level="2"
         passcode:indicator_margin="7dp"
         passcode:indicator_size="12dp"
+        passcode:indicator_animation="@anim/custom_indicator_animation"
         />
 
     <com.nirigo.mobile.view.passcode.PasscodeView
