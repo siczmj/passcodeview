@@ -62,9 +62,8 @@ public class PasscodeView extends ViewGroup {
     }
 
     private void init() {
-        setAdapter(new PasscodeAdapter(getContext()));
         this.rows = new ArrayList<Row>();
-        this.adapter.notifyDataSetChanged();
+        setAdapter(new PasscodeAdapter(getContext()));
     }
 
     private void initViews() {
@@ -125,12 +124,14 @@ public class PasscodeView extends ViewGroup {
             final View child = getChildAt(i);
             if (child.getVisibility() != GONE) {
                 LayoutParams lp = (LayoutParams) child.getLayoutParams();
+                //noinspection ResourceType
                 childWidthMeasureSpec = widthStretchMode ?
                         MeasureSpec.makeMeasureSpec(widthStretchTargetSize - lp.leftMargin - lp.rightMargin, MeasureSpec.EXACTLY) :
-                        MeasureSpec.makeMeasureSpec(lp.width, MeasureSpec.EXACTLY);
+                        MeasureSpec.makeMeasureSpec(lp.width == -1 ?  -2 : lp.width, childMeasureMode(lp.width, widthStretchMode));
+                //noinspection ResourceType
                 childHeightMeasureSpec = heightStretchMode ?
                         MeasureSpec.makeMeasureSpec(heightStretchTargetSize - lp.topMargin - lp.bottomMargin, MeasureSpec.EXACTLY) :
-                        MeasureSpec.makeMeasureSpec(lp.height, MeasureSpec.EXACTLY);
+                        MeasureSpec.makeMeasureSpec(lp.height == -1 ? -2 : lp.height, childMeasureMode(lp.height, heightStretchMode));
                 child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
             }
         }
@@ -219,6 +220,10 @@ public class PasscodeView extends ViewGroup {
         return heightStretchMode ? getMeasuredHeight() / countRow : LayoutParams.WRAP_CONTENT;
     }
 
+    private int childMeasureMode(int lpParams, boolean stretchMode){
+        if(lpParams == LayoutParams.MATCH_PARENT) lpParams = LayoutParams.WRAP_CONTENT;
+        return lpParams == LayoutParams.WRAP_CONTENT && !stretchMode ? MeasureSpec.AT_MOST : MeasureSpec.EXACTLY;
+    }
 
     private void populate() {
 
@@ -251,6 +256,7 @@ public class PasscodeView extends ViewGroup {
     public void setAdapter(PasscodeBaseAdapter adapter) {
         this.adapter = adapter;
         this.adapter.registerDataSetObserver(observer);
+        this.adapter.notifyDataSetChanged();
     }
 
     public PasscodeBaseAdapter getAdapter() {
@@ -269,7 +275,7 @@ public class PasscodeView extends ViewGroup {
 
     @Override
     protected LayoutParams generateDefaultLayoutParams() {
-        return new LayoutParams();
+        return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
     }
 
     @Override

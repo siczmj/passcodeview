@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nirigo.mobile.passcode._base.BaseFragment;
+import com.nirigo.mobile.passcode.adapters.CustomPasscodeAdapter;
 import com.nirigo.mobile.view.passcode.PasscodeIndicator;
 import com.nirigo.mobile.view.passcode.PasscodeView;
 
@@ -19,6 +20,8 @@ public class ExampleCustomizedFragment extends BaseFragment{
 
     private PasscodeView passcodeView;
     private PasscodeIndicator passcodeIndicator;
+
+    private CustomPasscodeAdapter customPasscodeAdapter;
 
     @Nullable
     @Override
@@ -36,6 +39,9 @@ public class ExampleCustomizedFragment extends BaseFragment{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        customPasscodeAdapter = new CustomPasscodeAdapter(getActivity());
+        passcodeView.setAdapter(customPasscodeAdapter);
 
 
     }
