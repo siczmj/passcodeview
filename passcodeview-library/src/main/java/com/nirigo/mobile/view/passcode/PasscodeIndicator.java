@@ -112,7 +112,19 @@ public class PasscodeIndicator extends LinearLayout {
         initLevel();
     }
 
+    public int getIndicatorLength() {
+        return indicatorLength;
+    }
+
     public int getIndicatorLevel() {
         return indicatorLevel;
+    }
+
+    public int getIndicatorSize() {
+        return indicatorSize;
+    }
+
+    public int getIndicatorMargin() {
+        return indicatorMargin;
     }
 }

@@ -8,14 +8,18 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import com.nirigo.mobile.view.passcode.adapters.PasscodeAdapter;
 import com.nirigo.mobile.view.passcode.adapters.PasscodeBaseAdapter;
+import com.nirigo.mobile.view.passcode.models.PasscodeItem;
 
 import java.util.ArrayList;
 
 /**
  * Created by Sicz-Mesziár János on 2015.06.14..
+ *
+ * The PasscodeView is a customizable password typer widget.
  */
 public class PasscodeView extends ViewGroup {
 
@@ -32,6 +36,8 @@ public class PasscodeView extends ViewGroup {
     private int widthStretchTargetSize,
             heightStretchTargetSize;
 
+
+    private OnItemClickListener onItemClickListener;
 
     // Constructor & Inits -------------------------------------------------------------------------
     public PasscodeView(Context context) {
@@ -70,6 +76,14 @@ public class PasscodeView extends ViewGroup {
                 View currentChild = getChildCount() > i ? getChildAt(i) : null;
                 if (currentChild != null) removeViewInLayout(currentChild);
                 View child = adapter.getView(i, currentChild, this);
+
+                final int index = i;
+                child.setOnClickListener(new OnClickListener() {
+                    public void onClick(View v) {
+                        if(onItemClickListener != null)
+                            onItemClickListener.onItemClick(PasscodeView.this, index, v, adapter.getItem(index));
+                    }
+                });
 
                 // Child layout params
                 LayoutParams layoutParams = generateDefaultLayoutParams();
@@ -230,6 +244,9 @@ public class PasscodeView extends ViewGroup {
 
     }
 
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
 
     public void setAdapter(PasscodeBaseAdapter adapter) {
         this.adapter = adapter;
@@ -240,6 +257,9 @@ public class PasscodeView extends ViewGroup {
         return adapter;
     }
 
+    public interface OnItemClickListener{
+        void onItemClick(PasscodeView view, int position, View item, Object o);
+    }
 
     // ViewGroup implements ------------------------------------------------
     @Override

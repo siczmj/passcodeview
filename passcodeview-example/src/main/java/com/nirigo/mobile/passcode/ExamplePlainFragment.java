@@ -20,6 +20,9 @@ public class ExamplePlainFragment extends BaseFragment {
     private PasscodeView passcodeView;
     private PasscodeIndicator passcodeIndicator;
 
+    private String yourCurrentPasscode = "";
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,6 +40,19 @@ public class ExamplePlainFragment extends BaseFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+
+        passcodeView.setOnItemClickListener(new PasscodeView.OnItemClickListener() {
+            public void onItemClick(PasscodeView view, int position, View item, Object o) {
+
+                yourCurrentPasscode += o.toString();
+                passcodeIndicator.setIndicatorLevel(yourCurrentPasscode.length());
+
+                if(yourCurrentPasscode.length() == passcodeIndicator.getIndicatorLength()){
+                    yourCurrentPasscode = "";
+                }
+
+            }
+        });
 
     }
 }
