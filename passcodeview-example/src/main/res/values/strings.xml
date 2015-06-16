@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">PasscodeView example</string>
 
-
+    <string name="app_name">PasscodeView</string>
+    <string name="prev">Prev</string>
+    <string name="next">Next</string>
 
 </resources>
