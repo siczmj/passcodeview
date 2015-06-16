@@ -8,6 +8,8 @@ import java.util.List;
 
 /**
  * Created by Sicz-Mesziár János on 2015.06.16..
+ *
+ * Simple adapter to ViewPager.
  */
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 

@@ -12,6 +12,8 @@ import com.nirigo.mobile.view.passcode.PasscodeView;
 
 /**
  * Created by Sicz-Mesziár János on 2015.06.16..
+ *
+ * Example for customization.
  */
 public class ExampleCustomizedFragment extends BaseFragment{
 
