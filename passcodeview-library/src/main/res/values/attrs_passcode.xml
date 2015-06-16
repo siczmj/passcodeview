@@ -6,6 +6,8 @@
         <attr name="indicator_level" format="integer" />
         <attr name="indicator_size" format="dimension" />
         <attr name="indicator_margin" format="dimension" />
+        <attr name="indicator_background" format="color|reference" />
+        <attr name="indicator_background_active" format="color|reference" />
     </declare-styleable>
 
 </resources>

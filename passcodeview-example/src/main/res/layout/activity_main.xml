@@ -20,6 +20,8 @@
         passcode:indicator_level="2"
         passcode:indicator_size="12dp"
         passcode:indicator_margin="7dp"
+        passcode:indicator_background="#A0A0A0"
+        passcode:indicator_background_active="#008a7c"
         />
 
     <com.nirigo.mobile.view.passcode.PasscodeView
