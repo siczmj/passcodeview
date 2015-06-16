@@ -56,14 +56,12 @@ public class PasscodeView extends ViewGroup {
     }
 
     private void init() {
-        Log.d("pass", ">> init()");
         setAdapter(new PasscodeAdapter(getContext()));
         this.rows = new ArrayList<Row>();
         this.adapter.notifyDataSetChanged();
     }
 
     private void initViews() {
-        Log.d("pass", ">> initViews()");
         if (adapter != null) {
             int count = adapter.getCount();
             for (int i = 0; i < count; i++) {
@@ -91,7 +89,6 @@ public class PasscodeView extends ViewGroup {
     private DataSetObserver observer = new DataSetObserver() {
         public void onChanged() {
             super.onChanged();
-            Log.d("pass", ">> observer onChanged()");
             initViews();
         }
     };
@@ -100,7 +97,6 @@ public class PasscodeView extends ViewGroup {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        Log.d("pass", ">> onMeasure()");
 
         // 1. Measure children
         this.widthStretchMode = checkWidthStretchMode();
@@ -148,8 +144,6 @@ public class PasscodeView extends ViewGroup {
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
 
-        Log.d("pass", ">> onLayout()");
-
         if (changed) {
 
             //@formatter:off
@@ -190,8 +184,7 @@ public class PasscodeView extends ViewGroup {
                 }
             }
 
-
-        }
+        } // changed
 
     }
 
@@ -261,8 +254,7 @@ public class PasscodeView extends ViewGroup {
 
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        LayoutParams params = new LayoutParams(getContext(), attrs);
-        return params;
+        return new LayoutParams(getContext(), attrs);
     }
 
     @Override

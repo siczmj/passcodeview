@@ -1,0 +1,97 @@
+package com.nirigo.mobile.view.passcode;
+
+import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.os.Build;
+import android.util.AttributeSet;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.LinearLayout;
+
+public class PasscodeIndicator extends LinearLayout {
+
+    private int indicatorLength     = 4;
+    private int indicatorLevel      = 0;
+    private int indicatorSize       = 12;
+    private int indicatorMargin     = 20;
+
+    public PasscodeIndicator(Context context) {
+        super(context);
+        init();
+        initLevel();
+    }
+
+    public PasscodeIndicator(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        initAttrs(context, attrs, 0);
+        init();
+        initLevel();
+    }
+
+    public PasscodeIndicator(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        initAttrs(context, attrs, defStyleAttr);
+        init();
+        initLevel();
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public PasscodeIndicator(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        initAttrs(context, attrs, defStyleAttr);
+        init();
+        initLevel();
+    }
+
+    private void initAttrs(Context context, AttributeSet attrs, int defStyleAttr){
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.PasscodeIndicator, defStyleAttr, 0);
+        indicatorLength = a.getInteger(R.styleable.PasscodeIndicator_indicator_length, 4);
+        indicatorLevel = a.getInt(R.styleable.PasscodeIndicator_indicator_level, 0);
+        indicatorSize = a.getDimensionPixelSize(R.styleable.PasscodeIndicator_indicator_size, 12);
+        indicatorMargin = a.getDimensionPixelOffset(R.styleable.PasscodeIndicator_indicator_margin, 10);
+        a.recycle();
+    }
+
+    private void init() {
+        setGravity(Gravity.CENTER_HORIZONTAL);
+        LayoutParams params = createChildLayoutParams();
+        removeAllViewsInLayout();
+        for (int i = 0; i < indicatorLength; i++) {
+            View v = new View(getContext());
+                 v.setLayoutParams(params);
+                 v.setBackgroundColor(Color.GRAY);
+            addViewInLayout(v, i, params, true);
+        }
+    }
+
+    private void initLevel(){
+        for (int i = 0; i < indicatorLength; i++) {
+            getChildAt(i).setBackgroundColor(
+                    i < indicatorLevel ? Color.BLUE : Color.GRAY
+            );
+        }
+    }
+
+    protected LayoutParams createChildLayoutParams(){
+        LayoutParams params = new LayoutParams(indicatorSize, indicatorSize);
+        params.leftMargin = indicatorMargin;
+        params.topMargin = indicatorMargin;
+        params.rightMargin = indicatorMargin;
+        params.bottomMargin = indicatorMargin;
+        return params;
+    }
+
+
+    public void setIndicatorLevel(int level) {
+        if (level > indicatorLength)
+            level = indicatorLength;
+        indicatorLevel = level;
+        initLevel();
+    }
+
+    public int getIndicatorLevel() {
+        return indicatorLevel;
+    }
+}
