@@ -8,6 +8,7 @@
         <attr name="indicator_margin" format="dimension" />
         <attr name="indicator_background" format="color|reference" />
         <attr name="indicator_background_active" format="color|reference" />
+        <attr name="indicator_animation" format="reference" />
     </declare-styleable>
 
 </resources>

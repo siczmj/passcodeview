@@ -21,7 +21,7 @@ public class ExamplePlainFragment extends BaseFragment {
     private PasscodeView passcodeView;
     private PasscodeIndicator passcodeIndicator;
 
-    private String yourCurrentPasscode = "";
+    private StringBuilder yourCurrentPasscode = new StringBuilder();
 
 
     @Nullable
@@ -45,11 +45,16 @@ public class ExamplePlainFragment extends BaseFragment {
         passcodeView.setOnItemClickListener(new PasscodeView.OnItemClickListener() {
             public void onItemClick(PasscodeView view, int position, View item, Object o) {
 
-                yourCurrentPasscode += o.toString();
-                passcodeIndicator.setIndicatorLevel(yourCurrentPasscode.length());
+                if(!passcodeIndicator.isAnimationInProgress()) {
 
-                if(yourCurrentPasscode.length() == passcodeIndicator.getIndicatorLength()){
-                    yourCurrentPasscode = "";
+                    yourCurrentPasscode.append(o.toString());
+                    passcodeIndicator.setIndicatorLevel(yourCurrentPasscode.length());
+
+                    if (yourCurrentPasscode.length() == passcodeIndicator.getIndicatorLength()) {
+                        yourCurrentPasscode = new StringBuilder();
+                        passcodeIndicator.wrongPasscode();
+                    }
+
                 }
 
             }

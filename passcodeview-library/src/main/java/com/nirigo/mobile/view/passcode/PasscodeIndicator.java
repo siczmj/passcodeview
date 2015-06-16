@@ -11,6 +11,8 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 
 public class PasscodeIndicator extends LinearLayout {
@@ -19,6 +21,10 @@ public class PasscodeIndicator extends LinearLayout {
     private int indicatorLevel = 0;
     private int indicatorSize = 12;
     private int indicatorMargin = 20;
+    private int indicatorAnimation = R.anim.tremble_horizontal;
+
+    private Animation wrongAnimation;
+    private boolean animationInProgress;
 
     private Drawable indicatorBackground = null,
             indicatorBackgroundActive = null;
@@ -65,6 +71,8 @@ public class PasscodeIndicator extends LinearLayout {
         if (indicatorBackgroundActive == null)
             indicatorBackgroundActive = createColorDrawable(Color.BLACK);
 
+        indicatorAnimation = a.getResourceId(R.styleable.PasscodeIndicator_indicator_animation, R.anim.tremble_horizontal);
+
         a.recycle();
     }
 
@@ -104,14 +112,43 @@ public class PasscodeIndicator extends LinearLayout {
         return drawable;
     }
 
+    // Functions -----------------------------------------------------------------------------------
+    public void wrongPasscode(){
+        if(wrongAnimation == null){
+            wrongAnimation = AnimationUtils.loadAnimation(getContext(), indicatorAnimation);
+            wrongAnimation.setAnimationListener(new Animation.AnimationListener() {
+                public void onAnimationStart(Animation animation) {
+                    animationInProgress = true;
+                }
+                public void onAnimationRepeat(Animation animation) {}
+                public void onAnimationEnd(Animation animation) {
+                    animationInProgress = false;
+                    setIndicatorLevel(0);
+                }
+            });
+        }
+        startAnimation(wrongAnimation);
+    }
 
+
+    // Setters -------------------------------------------------------------------------------------
     public void setIndicatorLevel(int level) {
-        if (level > indicatorLength)
-            level = indicatorLength;
+        if (level > indicatorLength) level = indicatorLength;
+        else if(level < 0) level = 0;
         indicatorLevel = level;
         initLevel();
     }
 
+    public void incrementLevel(){
+        setIndicatorLevel(getIndicatorLevel()+1);
+    }
+
+    public void decrementLevel(){
+        setIndicatorLevel(getIndicatorLevel()-1);
+    }
+
+
+    // Getters -------------------------------------------------------------------------------------
     public int getIndicatorLength() {
         return indicatorLength;
     }
@@ -126,5 +163,13 @@ public class PasscodeIndicator extends LinearLayout {
 
     public int getIndicatorMargin() {
         return indicatorMargin;
+    }
+
+    public int getIndicatorAnimation() {
+        return indicatorAnimation;
+    }
+
+    public boolean isAnimationInProgress() {
+        return animationInProgress;
     }
 }
