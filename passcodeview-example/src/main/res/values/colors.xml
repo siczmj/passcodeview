@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Green theme -->
+    <color name="custom_green">#008375</color>
+    <color name="custom_gray">#A0A0A0</color>
+
+    <!-- IOS theme -->
+    <color name="ios_white">#aaFFFFFF</color>
+
+</resources>

@@ -31,9 +31,9 @@ public class CustomPasscodeAdapter extends PasscodeBaseAdapter {
                 new PasscodeItem("7", PasscodeItem.TYPE_NUMBER),
                 new PasscodeItem("8", PasscodeItem.TYPE_NUMBER),
                 new PasscodeItem("9", PasscodeItem.TYPE_NUMBER),
-                new PasscodeItemEmpty(),
+                new PasscodeItem("X", PasscodeItem.TYPE_DELETE),
                 new PasscodeItem("0", PasscodeItem.TYPE_NUMBER),
-                new PasscodeItemEmpty()
+                new PasscodeItem("C", PasscodeItem.TYPE_CLEAR)
         ));
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }

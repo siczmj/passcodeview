@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="3dp"
-    android:background="#008375"
+    android:background="@color/custom_green"
     android:gravity="center"
     android:padding="12dp"
     android:text="1"
