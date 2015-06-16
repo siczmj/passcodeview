@@ -7,7 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.nirigo.mobile.passcode.adapters.ViewPagerAdapter;
+import com.nirigo.mobile.passcode.examples.ExampleIOSFragment;
+import com.nirigo.mobile.passcode.other.ViewPagerAdapter;
+import com.nirigo.mobile.passcode.examples.ExampleCustomizedFragment;
+import com.nirigo.mobile.passcode.examples.ExamplePlainFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         List<Class<? extends Fragment>> fragmentclasses = new ArrayList<Class<? extends Fragment>>();
         fragmentclasses.add(ExamplePlainFragment.class);
         fragmentclasses.add(ExampleCustomizedFragment.class);
+        fragmentclasses.add(ExampleIOSFragment.class);
 
         adapter = new ViewPagerAdapter(getSupportFragmentManager(), fragmentclasses);
         viewPager = (ViewPager) findViewById(R.id.viewpager);

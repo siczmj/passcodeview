@@ -1,4 +1,4 @@
-package com.nirigo.mobile.passcode;
+package com.nirigo.mobile.passcode.examples;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,7 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.nirigo.mobile.passcode._base.BaseFragment;
+import com.nirigo.mobile.passcode.R;
+import com.nirigo.mobile.passcode.other.BaseFragment;
 import com.nirigo.mobile.view.passcode.PasscodeIndicator;
 import com.nirigo.mobile.view.passcode.PasscodeView;
 

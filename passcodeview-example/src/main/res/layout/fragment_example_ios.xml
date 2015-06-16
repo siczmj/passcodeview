@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:passcode="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_background_ios">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/instruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/enter_passcode"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:typeface="sans"
+        />
+
+    <com.nirigo.mobile.view.passcode.PasscodeIndicator
+        android:id="@+id/passcode_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_below="@+id/instruction"
+        passcode:indicator_background="@drawable/shape_passcode_indicator_ios"
+        passcode:indicator_background_active="@drawable/shape_passcode_indicator_fill_ios"
+        passcode:indicator_length="4"
+        passcode:indicator_level="0"
+        passcode:indicator_margin="14dp"
+        passcode:indicator_size="16dp"
+        />
+
+    <com.nirigo.mobile.view.passcode.PasscodeView
+        android:id="@+id/passcode_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passcode_indicator"
+        android:layout_centerHorizontal="true"
+        />
+
+</RelativeLayout>

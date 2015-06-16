@@ -1,4 +1,4 @@
-package com.nirigo.mobile.passcode.adapters;
+package com.nirigo.mobile.passcode.other;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

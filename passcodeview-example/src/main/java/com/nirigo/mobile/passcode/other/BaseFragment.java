@@ -1,4 +1,4 @@
-package com.nirigo.mobile.passcode._base;
+package com.nirigo.mobile.passcode.other;
 
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;

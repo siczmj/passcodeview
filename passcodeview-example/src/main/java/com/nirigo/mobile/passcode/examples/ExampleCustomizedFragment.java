@@ -1,4 +1,4 @@
-package com.nirigo.mobile.passcode;
+package com.nirigo.mobile.passcode.examples;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,8 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.nirigo.mobile.passcode._base.BaseFragment;
-import com.nirigo.mobile.passcode.adapters.CustomPasscodeAdapter;
+import com.nirigo.mobile.passcode.R;
+import com.nirigo.mobile.passcode.other.BaseFragment;
+import com.nirigo.mobile.passcode.examples.adapters.CustomPasscodeAdapter;
 import com.nirigo.mobile.view.passcode.PasscodeIndicator;
 import com.nirigo.mobile.view.passcode.PasscodeView;
 
@@ -22,6 +23,8 @@ public class ExampleCustomizedFragment extends BaseFragment{
     private PasscodeIndicator passcodeIndicator;
 
     private CustomPasscodeAdapter customPasscodeAdapter;
+
+    private String yourCurrentPasscode = "";
 
     @Nullable
     @Override
@@ -41,7 +44,20 @@ public class ExampleCustomizedFragment extends BaseFragment{
         super.onActivityCreated(savedInstanceState);
 
         customPasscodeAdapter = new CustomPasscodeAdapter(getActivity());
+
         passcodeView.setAdapter(customPasscodeAdapter);
+        passcodeView.setOnItemClickListener(new PasscodeView.OnItemClickListener() {
+            public void onItemClick(PasscodeView view, int position, View item, Object o) {
+
+                yourCurrentPasscode += o.toString();
+                passcodeIndicator.setIndicatorLevel(yourCurrentPasscode.length());
+
+                if(yourCurrentPasscode.length() == passcodeIndicator.getIndicatorLength()){
+                    yourCurrentPasscode = "";
+                }
+
+            }
+        });
 
 
     }

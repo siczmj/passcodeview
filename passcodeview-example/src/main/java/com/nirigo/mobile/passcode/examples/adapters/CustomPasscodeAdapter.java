@@ -1,4 +1,4 @@
-package com.nirigo.mobile.passcode.adapters;
+package com.nirigo.mobile.passcode.examples.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatButton;
@@ -12,7 +12,6 @@ import com.nirigo.mobile.view.passcode.models.PasscodeItem;
 import com.nirigo.mobile.view.passcode.models.PasscodeItemEmpty;
 
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by Sicz-Mesziár János on 2015.06.16..
