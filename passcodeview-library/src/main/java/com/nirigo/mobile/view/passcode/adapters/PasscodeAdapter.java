@@ -7,11 +7,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.nirigo.mobile.view.passcode.models.PasscodeItem;
+import com.nirigo.mobile.view.passcode.models.PasscodeItemEmpty;
 
 import java.util.Arrays;
 
 /**
  * Created by Sicz-Mesziár János on 2015.06.14..
+ *
+ * Default adapter to PasscodeView.
  */
 public class PasscodeAdapter extends PasscodeBaseAdapter {
 
@@ -28,23 +31,26 @@ public class PasscodeAdapter extends PasscodeBaseAdapter {
                 new PasscodeItem("7", PasscodeItem.TYPE_NUMBER),
                 new PasscodeItem("8", PasscodeItem.TYPE_NUMBER),
                 new PasscodeItem("9", PasscodeItem.TYPE_NUMBER),
-                new PasscodeItem("X", PasscodeItem.TYPE_DELETE),
+                new PasscodeItemEmpty(),
                 new PasscodeItem("0", PasscodeItem.TYPE_NUMBER),
-                new PasscodeItem("<", PasscodeItem.TYPE_CLEAR))
-        );
+                new PasscodeItemEmpty()
+        ));
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
+        PasscodeItem item = getItem(position);
+
         if(convertView == null){
             convertView = inflater.inflate(com.nirigo.mobile.view.passcode.R.layout.button_passcode, parent, false);
         }
 
-        PasscodeItem item = getItem(position);
-
         Button button = (Button) convertView;
-        button.setText(item.getValue());
+               button.setText(item.getValue());
+
+        button.setVisibility(item.getType() == PasscodeItem.TYPE_EMPTY ? View.INVISIBLE : View.VISIBLE);
 
         return convertView;
     }

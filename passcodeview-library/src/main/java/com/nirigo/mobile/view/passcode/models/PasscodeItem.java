@@ -2,12 +2,15 @@ package com.nirigo.mobile.view.passcode.models;
 
 /**
  * Created by Sicz-Mesziár János on 2015.06.14..
+ *
+ * Describe a button on PasscodeView.
  */
 public class PasscodeItem {
 
-    public final static int TYPE_NUMBER = 0,
-                            TYPE_DELETE = 1,
-                            TYPE_CLEAR  = 2;
+    public final static int TYPE_EMPTY  = -1,
+                            TYPE_NUMBER =  0,
+                            TYPE_DELETE =  1,
+                            TYPE_CLEAR  =  2;
 
     private String value;
     private int type;
