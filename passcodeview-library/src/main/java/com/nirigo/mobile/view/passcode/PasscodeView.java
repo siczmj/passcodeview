@@ -5,14 +5,11 @@ import android.content.Context;
 import android.database.DataSetObserver;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import com.nirigo.mobile.view.passcode.adapters.PasscodeAdapter;
 import com.nirigo.mobile.view.passcode.adapters.PasscodeBaseAdapter;
-import com.nirigo.mobile.view.passcode.models.PasscodeItem;
 
 import java.util.ArrayList;
 

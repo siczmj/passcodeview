@@ -13,7 +13,6 @@ import com.nirigo.mobile.view.passcode.models.PasscodeItem;
 import com.nirigo.mobile.view.passcode.models.PasscodeItemEmpty;
 
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by Sicz-Mesziár János on 2015.06.16..

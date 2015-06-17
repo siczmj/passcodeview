@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nirigo.mobile.passcode.R;
-import com.nirigo.mobile.passcode.other.BaseFragment;
 import com.nirigo.mobile.passcode.examples.adapters.CustomPasscodeAdapter;
+import com.nirigo.mobile.passcode.other.BaseFragment;
 import com.nirigo.mobile.view.passcode.PasscodeIndicator;
 import com.nirigo.mobile.view.passcode.PasscodeView;
 import com.nirigo.mobile.view.passcode.models.PasscodeItem;

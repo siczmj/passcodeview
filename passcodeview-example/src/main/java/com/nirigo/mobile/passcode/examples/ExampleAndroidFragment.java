@@ -1,9 +1,7 @@
 package com.nirigo.mobile.passcode.examples;
 
-import android.graphics.drawable.RippleDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.LayoutInflater;
 import android.view.View;

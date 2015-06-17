@@ -10,14 +10,11 @@ import android.widget.ImageView;
 import com.nirigo.mobile.passcode.R;
 import com.nirigo.mobile.passcode.examples.models.PasscodeItemAndroid;
 import com.nirigo.mobile.passcode.examples.models.PasscodeItemAndroidImage;
-import com.nirigo.mobile.passcode.examples.models.PasscodeItemIOS;
 import com.nirigo.mobile.view.passcode.adapters.PasscodeBaseAdapter;
 import com.nirigo.mobile.view.passcode.models.PasscodeItem;
 import com.nirigo.mobile.view.passcode.models.PasscodeItemEmpty;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.zip.Inflater;
 
 /**
  * Created by Sicz-Mesziár János on 2015.06.17..

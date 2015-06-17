@@ -8,10 +8,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.nirigo.mobile.passcode.examples.ExampleAndroidFragment;
-import com.nirigo.mobile.passcode.examples.ExampleIOSFragment;
-import com.nirigo.mobile.passcode.other.ViewPagerAdapter;
 import com.nirigo.mobile.passcode.examples.ExampleCustomizedFragment;
+import com.nirigo.mobile.passcode.examples.ExampleIOSFragment;
 import com.nirigo.mobile.passcode.examples.ExamplePlainFragment;
+import com.nirigo.mobile.passcode.other.ViewPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
