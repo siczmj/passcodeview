@@ -1,9 +1,12 @@
 package com.nirigo.mobile.passcode.other;
 
+import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 /**
  * Created by Sicz-Mesziár János on 2015.06.16..
@@ -28,4 +31,12 @@ public class BaseFragment extends Fragment {
         ((ViewGroup)view.getParent()).removeView(view);
     }
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            if(view != null)
+                view.setPadding(0, 0, 0, ScreenUtils.getNavigationBarSize(getActivity()).y);
+        }
+    }
 }
