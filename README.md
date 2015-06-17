@@ -15,11 +15,14 @@ An simple indicator view for feedback.
 <img src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_example_android.png" width="175" />
 
 ### On the move
+<img src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_example_android.gif" width="250" />
+<!--
 <video width="416" height="672" autoplay>
   <source src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_android_capture.webm" type="video/webm" />
   <source src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_android_capture.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
+-->
 
 ------
 
