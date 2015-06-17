@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="82dp"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textSize="36sp"
+        android:textColor="@android:color/white"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/characters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/number"
+        android:layout_toEndOf="@+id/number"
+        android:layout_alignBaseline="@+id/number"
+        android:layout_marginLeft="7dp"
+        android:text="ABC"
+        android:textSize="18sp"
+        android:typeface="monospace"
+        android:textColor="@color/android_white_hint"
+        />
+
+</RelativeLayout>

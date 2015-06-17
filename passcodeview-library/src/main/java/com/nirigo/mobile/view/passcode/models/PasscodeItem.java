@@ -10,7 +10,8 @@ public class PasscodeItem {
     public final static int TYPE_EMPTY  = -1,
                             TYPE_NUMBER =  0,
                             TYPE_REMOVE =  1,
-                            TYPE_CLEAR  =  2;
+                            TYPE_CLEAR  =  2,
+                            TYPE_ENTER  =  3;
 
     private String value;
     private int type;

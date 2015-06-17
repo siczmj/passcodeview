@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_jelly_bean"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/passcode_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/passcode_view"
+        android:layout_alignEnd="@+id/passcode_view"
+        android:layout_alignLeft="@+id/passcode_view"
+        android:layout_alignRight="@+id/passcode_view"
+        android:layout_alignStart="@+id/passcode_view"
+        android:gravity="center_vertical"
+        android:hint="@string/passcode_hint_android"
+        android:inputType="text|textPassword"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textSize="22sp"
+        android:textColor="@color/android_white"
+        android:textColorHint="@color/android_white_hint"
+        android:drawableRight="@drawable/ic_cancel_white_36dp"
+        android:drawableEnd="@drawable/ic_cancel_white_36dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignEnd="@+id/passcode_view"
+        android:layout_alignLeft="@+id/passcode_view"
+        android:layout_alignRight="@+id/passcode_view"
+        android:layout_alignStart="@+id/passcode_view"
+        android:layout_below="@+id/passcode_textview"
+        android:background="@color/android_white"
+        />
+
+    <com.nirigo.mobile.view.passcode.PasscodeView
+        android:id="@+id/passcode_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="72dp"
+        />
+
+</RelativeLayout>

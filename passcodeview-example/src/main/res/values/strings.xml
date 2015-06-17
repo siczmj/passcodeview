@@ -4,5 +4,6 @@
     <string name="prev">Prev</string>
     <string name="next">Next</string>
     <string name="enter_passcode">Enter Passcode</string>
+    <string name="passcode_hint_android">P A S S C O D E</string>
 
 </resources>
