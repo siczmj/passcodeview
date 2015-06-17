@@ -92,24 +92,49 @@ public class CustomPasscodeAdapter extends PasscodeBaseAdapter {
 ```
 
 
+### Add the PasscodeIndicator to your XML layout
+
+
+
+
+------
+
 ## Tips & Tricks
 
-### How to add custom buttons and custom actions to PasscodeView?
+### How to add custom buttons and actions to PasscodeView?
 
+It's really easy. You can see the example in the Android implementation:
+
+1. You need to extends the PasscodeItem model and add the new parameters.
+like PasscodeItemAndroid and PasscodeItemAndroidImage in the models package
+
+2. Make new adapter that use your unique PasscodeItems.
+like AndroidPasscodeAdapter
+
+3. Handle it in the getView() implementation and pass your custom layout.
+like in the AndroidPasscodeAdapter.getView() I added Enter event with ImageView
+
+4. Catch the onItemClick and hanle the custom event.
+like in the ExampleAndroidFragment, check Enter event.
 
 
 ### Can I use any drawable/mipmap/color on indicator?
 
 Yes.
 
-
+------
 
 ## Sample
+
+
+
+------
 
 ## TODO
 
 - change number of column
 - add watch() method to passcodeindicator to listening EditText/Autocomplete..
+- example for imageview implementation
 
 
 ## License
