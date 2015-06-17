@@ -133,7 +133,6 @@ public class PasscodeView extends ViewGroup {
                         MeasureSpec.makeMeasureSpec(heightStretchTargetSize - lp.topMargin - lp.bottomMargin, MeasureSpec.EXACTLY) :
                         MeasureSpec.makeMeasureSpec(lp.height == -1 ? -2 : lp.height, childMeasureMode(lp.height, heightStretchMode));
                 child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-                Log.d("passcode", "Child measured: " + childHeightMeasureSpec + " , " + childHeightMeasureSpec);
             }
         }
 
