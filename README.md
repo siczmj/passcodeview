@@ -38,6 +38,8 @@ There is enough to download only the passcodeview-library which contains all nec
 
 #### Wrap mode or Strech mode
 
+[COMING SOON]
+
 
 ### Implement PasscodeBaseAdapter ...
 ```java
@@ -81,7 +83,6 @@ public class CustomPasscodeAdapter extends PasscodeBaseAdapter {
 
     }
 
-
 }
 ```
 
@@ -94,7 +95,7 @@ public class CustomPasscodeAdapter extends PasscodeBaseAdapter {
 
 ### Add the PasscodeIndicator to your XML layout
 
-
+[COMING SOON]
 
 
 ------
@@ -126,6 +127,7 @@ Yes.
 
 ## Sample
 
+[COMING SOON]
 
 
 ------
@@ -133,6 +135,7 @@ Yes.
 ## TODO
 
 - change number of column
+- add selector support
 - add watch() method to passcodeindicator to listening EditText/Autocomplete..
 - example for imageview implementation
 
