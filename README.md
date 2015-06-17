@@ -9,10 +9,16 @@ This is a full customizable numeric pad using the PasscodeBaseAdapter.
 An simple indicator view for feedback.
 
 ### Screenshots
-<img src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_example_plain.png" width="180" />
-<img src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_example_customized.png" width="180" />
-<img src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_example_ios.png" width="180" />
-<img src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_example_android.png" width="180" />
+<img src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_example_plain.png" width="175" />
+<img src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_example_customized.png" width="175" />
+<img src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_example_ios.png" width="175" />
+<img src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_example_android.png" width="175" />
+
+### On the move
+<video width="416" height="672" autoplay>
+  <source src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_android_capture.webm" type="video/webm" />
+  Your browser does not support the video tag.
+</video>
 
 ------
 
