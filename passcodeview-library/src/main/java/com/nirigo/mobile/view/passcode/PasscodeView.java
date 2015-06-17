@@ -136,8 +136,6 @@ public class PasscodeView extends ViewGroup {
             }
         }
 
-
-
         // 2. Populate
         populate();
 
