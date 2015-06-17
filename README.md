@@ -17,6 +17,7 @@ An simple indicator view for feedback.
 ### On the move
 <video width="416" height="672" autoplay>
   <source src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_android_capture.webm" type="video/webm" />
+  <source src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_android_capture.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
