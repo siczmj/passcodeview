@@ -133,8 +133,11 @@ public class PasscodeView extends ViewGroup {
                         MeasureSpec.makeMeasureSpec(heightStretchTargetSize - lp.topMargin - lp.bottomMargin, MeasureSpec.EXACTLY) :
                         MeasureSpec.makeMeasureSpec(lp.height == -1 ? -2 : lp.height, childMeasureMode(lp.height, heightStretchMode));
                 child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+                Log.d("passcode", "Child measured: " + childHeightMeasureSpec + " , " + childHeightMeasureSpec);
             }
         }
+
+
 
         // 2. Populate
         populate();
@@ -222,7 +225,10 @@ public class PasscodeView extends ViewGroup {
 
     private int childMeasureMode(int lpParams, boolean stretchMode){
         if(lpParams == LayoutParams.MATCH_PARENT) lpParams = LayoutParams.WRAP_CONTENT;
-        return lpParams == LayoutParams.WRAP_CONTENT && !stretchMode ? MeasureSpec.AT_MOST : MeasureSpec.EXACTLY;
+        // return lpParams == LayoutParams.WRAP_CONTENT && !stretchMode ? MeasureSpec.AT_MOST : MeasureSpec.EXACTLY;
+        return lpParams == LayoutParams.WRAP_CONTENT && !stretchMode ?
+                Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN ? MeasureSpec.EXACTLY : MeasureSpec.AT_MOST :
+                MeasureSpec.EXACTLY;
     }
 
     private void populate() {

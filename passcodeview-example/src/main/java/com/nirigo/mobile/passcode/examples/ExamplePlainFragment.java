@@ -41,7 +41,6 @@ public class ExamplePlainFragment extends BaseFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-
         passcodeView.setOnItemClickListener(new PasscodeView.OnItemClickListener() {
             public void onItemClick(PasscodeView view, int position, View item, Object o) {
 

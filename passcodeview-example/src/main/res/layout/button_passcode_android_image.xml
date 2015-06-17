@@ -2,13 +2,13 @@
 <ImageView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:src="@drawable/ic_keyboard_return_white_36dp"
-    android:layout_width="82dp"
+    android:layout_width="76dp"
     android:layout_height="wrap_content"
     android:minHeight="44dp"
     android:contentDescription="@null"
     android:padding="2dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
     />
