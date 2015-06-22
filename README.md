@@ -104,7 +104,35 @@ public class CustomPasscodeAdapter extends PasscodeBaseAdapter {
 
 ### Add the PasscodeIndicator to your XML layout
 
-[COMING SOON]
+Add the passcode xml namespace to access all attributes:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:passcode="http://schemas.android.com/apk/res-auto"
+    ...
+```
+
+Add the indicator to xml and give the appearance parameters:
+
+```xml
+<com.nirigo.mobile.view.passcode.PasscodeIndicator
+        android:id="@+id/passcode_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="24dp"
+        passcode:indicator_background="@color/custom_gray"
+        passcode:indicator_background_active="@color/custom_green"
+        passcode:indicator_length="6"
+        passcode:indicator_level="2"
+        passcode:indicator_margin="7dp"
+        passcode:indicator_size="12dp"
+        passcode:indicator_animation="@anim/custom_indicator_animation"
+        />
+```
+
 
 
 ------
