@@ -104,7 +104,7 @@ public class CustomPasscodeAdapter extends PasscodeBaseAdapter {
 
 ### Add the PasscodeIndicator to your XML layout
 
-Add the passcode xml namespace to access all attributes:
+Add the passcode xml namespace to access all custom attributes:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -123,6 +123,7 @@ Add the indicator to xml and give the appearance parameters:
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:layout_marginTop="24dp"
+
         passcode:indicator_background="@color/custom_gray"
         passcode:indicator_background_active="@color/custom_green"
         passcode:indicator_length="6"
@@ -133,10 +134,10 @@ Add the indicator to xml and give the appearance parameters:
         />
 ```
 
-#### How to set typed characters in the indicator?
+#### How to set the level in the indicator?
 
-The indicator it's just a feedback for users so exactly not matter what indicated. That mean you
-need set the indicator level only and you want to use anything.
+The indicator it's just a feedback for users so exactly not matter what indicate. That mean you
+need to set the indicator level only and you want to use anything.
 
 ```java
     passcodeIndicator.setIndicatorLevel(yourCurrentPasscode.length());
@@ -149,7 +150,7 @@ need set the indicator level only and you want to use anything.
     passcodeIndicator.wrongPasscode();
 ```
 
-In this case the default animation will be shake all indicator drawables.
+In this case the default animation will be shake all indicator drawables. See the [demo](https://github.com/siczmj/passcodeview#demo).
 
 
 ------
@@ -177,6 +178,19 @@ like in the [ExampleAndroidFragment](https://github.com/siczmj/passcodeview/blob
 ### Can I use any drawable/mipmap/color on indicator?
 
 Yes.
+
+### What mean the type in the PasscodeItem?
+
+Type member can help you seperate View type or action type.
+
+| Field         | Value | Explain                               |
+| --------------|:-----:| -------------------------------------:|
+| TYPE_EMPTY    | -1    | Use when you can hide an View.        |
+| TYPE_NUMBER   |  0    | Typical mean dial number.             |
+| TYPE_REMOVE   |  1    | Backspace or remove last character.   |
+| TYPE_CLEAR    |  2    | Clear all text.                       |
+| TYPE_ENTER    |  3    | Send prevously typed characters.      |
+
 
 ------
 
