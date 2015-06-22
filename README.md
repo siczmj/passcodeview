@@ -36,9 +36,18 @@ There is enough to download only the passcodeview-library which contains all nec
         />
 ```
 
-#### Wrap mode or Strech mode
+#### Wrap mode or Stretch mode
 
-[COMING SOON]
+The PasscodeView working as auto wrapping mode and stretch mode too. What does it mean? In wrap mode
+the PasscodeView measure self by children sizes. It's good when you set the buttons size wrap_content
+or any exact size. In this case you need to use appropriate *inflater* in getView() implementation.
+See any [example of PasscodeViewAdapter](https://github.com/siczmj/passcodeview/tree/master/passcodeview-example/src/main/java/com/nirigo/mobile/passcode/examples/adapters).
+If you set the layout_width and/or layout_height of PasscodeView to match_parent or exact size then
+will be stretch each child with equal size. So, in this case not matter what is the size of the
+children.
+
+<img src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_wrap_mode.png" width="200" />
+<img src="https://github.com/siczmj/passcodeview/blob/master/screenshots/passcode_view_stretch_mode.png" width="200" />
 
 
 ### Implement PasscodeBaseAdapter ...
