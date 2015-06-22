@@ -133,6 +133,23 @@ Add the indicator to xml and give the appearance parameters:
         />
 ```
 
+#### How to set typed characters in the indicator?
+
+The indicator it's just a feedback for users so exactly not matter what indicated. That mean you
+need set the indicator level only and you want to use anything.
+
+```java
+    passcodeIndicator.setIndicatorLevel(yourCurrentPasscode.length());
+```
+
+
+#### Animate when something wrong
+
+```java
+    passcodeIndicator.wrongPasscode();
+```
+
+In this case the default animation will be shake all indicator drawables.
 
 
 ------
@@ -143,17 +160,18 @@ Add the indicator to xml and give the appearance parameters:
 
 It's really easy. You can see the example in the Android implementation:
 
-1. You need to extends the PasscodeItem model and add the new parameters.
-like PasscodeItemAndroid and PasscodeItemAndroidImage in the models package
+1. You need to extends the [PasscodeItem](https://github.com/siczmj/passcodeview/blob/master/passcodeview-library/src/main/java/com/nirigo/mobile/view/passcode/models/PasscodeItem.java)
+model and add the new parameters. Like [PasscodeItemAndroid](https://github.com/siczmj/passcodeview/blob/master/passcodeview-example/src/main/java/com/nirigo/mobile/passcode/examples/models/PasscodeItemAndroid.java) and [PasscodeItemAndroidImage](https://github.com/siczmj/passcodeview/blob/master/passcodeview-example/src/main/java/com/nirigo/mobile/passcode/examples/models/PasscodeItemAndroidImage.java)
+in the models package of example project.
 
 2. Make new adapter that use your unique PasscodeItems.
-like AndroidPasscodeAdapter
+Like [AndroidPasscodeAdapter](https://github.com/siczmj/passcodeview/blob/master/passcodeview-example/src/main/java/com/nirigo/mobile/passcode/examples/adapters/AndroidPasscodeAdapter.java).
 
 3. Handle it in the getView() implementation and pass your custom layout.
-like in the AndroidPasscodeAdapter.getView() I added Enter event with ImageView
+Like in the [AndroidPasscodeAdapter.getView()](https://github.com/siczmj/passcodeview/blob/master/passcodeview-example/src/main/java/com/nirigo/mobile/passcode/examples/adapters/AndroidPasscodeAdapter.java#L45) I added Enter event with ImageView
 
 4. Catch the onItemClick and hanle the custom event.
-like in the ExampleAndroidFragment, check Enter event.
+like in the [ExampleAndroidFragment](https://github.com/siczmj/passcodeview/blob/master/passcodeview-example/src/main/java/com/nirigo/mobile/passcode/examples/ExampleAndroidFragment.java#L54), check Enter event.
 
 
 ### Can I use any drawable/mipmap/color on indicator?
@@ -162,10 +180,32 @@ Yes.
 
 ------
 
-## Sample
+## Samples
 
-[COMING SOON]
+There are follow [samples](https://github.com/siczmj/passcodeview/tree/master/passcodeview-example/src/main/java/com/nirigo/mobile/passcode/examples) available:
 
+1. Plain usage:
+
+    - ExamplePlainFragment.java
+
+2. Customization example:
+
+    - ExampleCustomizedFragment.java
+    - CustomPasscodeAdapter.java
+
+3. IOS look example:
+
+    - ExampleIOSFragment.java
+    - PasscodeItemIOS.java
+    - IOSPasscodeAdapter.java
+    - ...and corresponding elements
+
+4. Android PIN code example:
+
+    - ExampleAndroidFragment.java
+    - PasscodeItemAndroid.java and PasscodeItemAndroidImage.java
+    - AndroidPasscodeAdapter.java
+    - ...and corresponding elements
 
 ------
 
@@ -175,6 +215,7 @@ Yes.
 - add selector support
 - add watch() method to passcodeindicator to listening EditText/Autocomplete..
 - example for imageview implementation
+- AAR in maven repo
 
 
 ## License
