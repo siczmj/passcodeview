@@ -184,7 +184,7 @@ Yes.
 Type member can help you seperate View type or action type.
 
 | Field         | Value | Explain                               |
-| --------------|:-----:| -------------------------------------:|
+| --------------|:-----:| ------------------------------------- |
 | TYPE_EMPTY    | -1    | Use when you can hide an View.        |
 | TYPE_NUMBER   |  0    | Typical mean dial number.             |
 | TYPE_REMOVE   |  1    | Backspace or remove last character.   |
