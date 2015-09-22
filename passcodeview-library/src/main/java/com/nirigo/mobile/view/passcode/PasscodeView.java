@@ -221,7 +221,7 @@ public class PasscodeView extends ViewGroup {
         if(lpParams == LayoutParams.MATCH_PARENT) lpParams = LayoutParams.WRAP_CONTENT;
         // return lpParams == LayoutParams.WRAP_CONTENT && !stretchMode ? MeasureSpec.AT_MOST : MeasureSpec.EXACTLY;
         return lpParams == LayoutParams.WRAP_CONTENT && !stretchMode ?
-                Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN ? MeasureSpec.EXACTLY : MeasureSpec.AT_MOST :
+                Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN_MR2 ? MeasureSpec.EXACTLY : MeasureSpec.AT_MOST :
                 MeasureSpec.EXACTLY;
     }
 
