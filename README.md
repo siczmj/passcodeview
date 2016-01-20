@@ -25,7 +25,32 @@ padding, margin, default or active drawable and of course animation.
 ## Usage
 
 ### Download
+
+#### As library project
+
 There is enough to download only the passcodeview-library which contains all neccessary files.
+
+#### As Gradle dependency
+
+The AAR file is available using by JitPack. So you need to edit the gradle files and run gradle sync.
+
+Add it in your root build.gradle at the end of repositories:
+```gradle
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+
+Add the dependency at the end of your /app/build.gradle files:
+```gradle
+dependencies {
+        compile 'com.github.siczmj:passcodeview:v1.0.1'
+}
+```
+
 
 ### Add PasscodeView to your XML layout
 ```xml
